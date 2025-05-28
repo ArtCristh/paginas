@@ -23,12 +23,21 @@
 			height: 400px;
 			background: linear-gradient(#6D39E2,#E2386E);
 			border-radius: 20px;
+			border-collapse: collapse;
 			z-index: 1;
 			margin:auto;
 			display: block;
+			transition: 0.8s;
+			box-shadow: 0  20px 40px rgba(0, 0, 0, 1.0);
+		}
+		.imagen-cuerpo:hover{
+			width: 1000px;
+			height: 700px;
+			border-radius: 100px;
 		}
 		.imagen-header{
 			border-radius: 20px;
+			border-collapse: collapse;
 			width: 200px;
 			height: 200px;
 			position:sticky;
@@ -40,10 +49,10 @@
 			font-size: 20px;
 			color: white;
 			-webkit-text-stroke: 0.5px black;
-			font-family:montserrat;
+			font-family:sans-serif;
 			width: 100%;
 			margin: auto;
-			text-align: center;
+			text-align: justify;
 
 		}
 		.text{
@@ -64,7 +73,8 @@
 			background-size: cover;
 			background-position:sticky;
 			background-color: #ffffff;
-			background-image: url("/home/art_cristh595/Documentos/pagina/paginas-main/fondo.jpg");
+			background-image: url("C:/Users/LAB1_02/Downloads/paginas-main/fondo.jpg");
+			font-family: sans-serif ;
 		}
 		h2{
 		
@@ -73,8 +83,8 @@
 			-webkit-text-stroke: 0.5px black;
 			font-family:montserrat;
 			width: 100%;
-			margin: auto;
-			text-align: center;
+			margin: 30px auto;
+			text-align: justify;
 
 
 		}
@@ -116,15 +126,64 @@
 		.h1cuerpo{
 			text-align: center;
 			color:white;
-			margin:auto;
+			margin:30px auto;
 			display:auto;
 
+		}
+		ul{
+			list-style: square;
+		}
+		form{
+			display: flex;
+			flex-direction: column;
+			gap:15px;
+		}
+		input[type="text"],
+		input[type="correo electronico"],\
+		textarea{
+
+			padding: 12px;
+			border: 5px solid purple;
+			border-radius: 10px;
+			transition: all 0.3s ease;
+		}
+		input:focus,
+		textarea:focus{
+			border-radius:20px ;
+			color:#000000;
+			border-color: #000000;
+			box-shadow: 0 0 5px rgba(0, 0, 0,1.0);
+			outline:none;
+		}
+		input[type="submit"]{
+			background: linear-gradient(to right, #000000, #ffffff);
+			color : #000000;
+			border: none;
+			border-radius: 15px;
+			font-weight: bold;
+			cursor:pointer;
+			transition: background 0.3s ease;
+		}
+		input[type="submit"]:hover{
+			background:linear-gradient(to right, #000000 , #ffffff);
+		}
+		video{
+			border:12px solid black;
+			max-width: 100%;
+			border-radius: 20px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 1.0);
+
+		}
+
+
+		.honeypot{
+			display:none;
 		}
 	</style>
 </head>
 <body>
 	<header>
-		<img src="/home/art_cristh595/Documentos/pagina/paginas-main/cute.jpeg" class="imagen-header" >
+		<img src="C:\Users\LAB1_02\Downloads\paginas-main\cute.jpeg" class="imagen-header" >
 			<nav>
 				<ul>
 				<li><a href="https://youtu.be/_dza1OjfW-o?si=sbneewUensqWVr9T">sobre artch</a></li>
@@ -149,7 +208,7 @@
 	<br></br>
 
 	
-	<img src="/home/art_cristh595/Documentos/pagina/paginas-main/asa.jpeg" alt="asa mikata mi novia" class="imagen-cuerpo"/>
+	<img src="C:\Users\LAB1_02\Downloads\paginas-main\asa.jpeg" alt="asa mikata mi novia" class="imagen-cuerpo"/>
 	<br></br>
 
 
@@ -158,16 +217,29 @@
 	<br></br>
 	<h1 class="h1cuerpo">Esta es una imagen temprana de el desarrollo del entorno de escritorio.</h1>
 	<br></br>
-	<img src = "/home/art_cristh595/Documentos/pagina/paginas-main/setup.png" alt ="setup basado en hyperland" class="imagen-cuerpo">
+	<img src = "C:\Users\LAB1_02\Downloads\paginas-main\setup.png" alt ="setup basado en hyperland" class="imagen-cuerpo">
+
 	<br></br>
 	<h2>El escritorio usa una barra de estado waybar, y trae software de utilidad como, visor de imagenes(Imagine),reporductor de musica(VLC), software de manejo de disco y particiones(xxx).Etc, 
 	Iris os o Iris linux es un distro en desarrollo la cual esta opensada para uso comun, software dev, hacking etico y gaming en la cual tendra la oportunidad de usar arch pero sin la configuracion, perfecta para nuevos en archlinux los cuales quieres aprender pero a la vez que funcione.</h2>
 	<h2>despues les mostrare mas sobre el sistema y como va si les interesa jeje</h2>
 	<br></br>
+
 	<h2> para ver mas de mis proyectos entra a mi Github que esta arribita</h2>
+	<section>
+		<h2>formulario</h2>
+		<form autocomplete="off" method="post">
+		<input type="text" name="bot_control" class="honeypot">
+	<label for="nombre" >nombre:</label>
+	<input type="nombre" id="nombre" name="nombre" required minlength="2" maxlength="50" autocomplete="off" >
+	<label for="correo">correo:</label>
+	<input type="email" id="correo" name="correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+	<label for="mensaje">mensaje:</label>
+	<textarea id="mensaje" name="mensaje" rows="4" required maxlength="500"></textarea>
+	<input type="submit" value=" enviar mensaje">
+		<!-- evitar bots -->
+	</section>
 	
-
-
 
 </body>
 </html>
